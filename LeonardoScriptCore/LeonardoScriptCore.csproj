@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DM\CDmSoft.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serial\CommandManager.cs" />
     <Compile Include="Serial\DataStream.cs" />
@@ -69,6 +70,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DM\使用方法.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LeonardoScriptLog\LeonardoScriptLog.csproj">
+      <Project>{63e2fc7c-7f04-49f3-9cd4-b2965384d40e}</Project>
+      <Name>LeonardoScriptLog</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="..\Entity\Entity.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

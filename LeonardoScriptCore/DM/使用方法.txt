@@ -1,0 +1,14 @@
+程序运行目录包括：dmc.dll, dm.dll
+支持最新版本大漠：4.1318
+
+CDmSoft dm = new CDmSoft();
+            try
+            {
+                Console.WriteLine("大漠版本：" + dm.Ver());
+                Console.WriteLine("当前目录：" + dm.GetBasePath());
+                Console.WriteLine("ip时间：" + dm.GetNetTimeByIp("202.120.2.101"));
+            }
+            catch (Exception ex){
+                Console.WriteLine(ex.Message);
+            }
+            dm.Dispose();

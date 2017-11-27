@@ -35,6 +35,7 @@
     <Reference Include="Autofac, Version=4.6.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.4.6.1\lib\net45\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -94,6 +95,10 @@
     <ProjectReference Include="..\LeonardoScriptCore\LeonardoScriptCore.csproj">
       <Project>{9ff4c650-a9be-454f-b800-5d04f3d081c4}</Project>
       <Name>LeonardoScriptCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LeonardoScriptLog\LeonardoScriptLog.csproj">
+      <Project>{63E2FC7C-7F04-49F3-9CD4-B2965384D40E}</Project>
+      <Name>LeonardoScriptLog</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

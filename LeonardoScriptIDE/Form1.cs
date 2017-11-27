@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using LeonardoScriptCore.Serial;
+using LeonardoScriptCore.DM;
 using LeonardoScriptIDE.WINApi;
 using Microsoft.Win32;
 using System;
@@ -14,6 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static LeonardoScriptIDE.WINApi.WindowsOP;
+using LeonardoScriptLog;
 
 namespace LeonardoScriptIDE
 {
@@ -24,7 +26,7 @@ namespace LeonardoScriptIDE
         IntPtr hwdTemp = IntPtr.Zero;
 
         Image imagePre;
-
+        CDmSoft dm;
         public Form1()
         {
             InitializeComponent();
@@ -97,6 +99,7 @@ namespace LeonardoScriptIDE
             if (!this.Bounds.Contains(Cursor.Position))
             {
                 hwdFinded = WindowFromPoint(Cursor.Position);
+
                 if (hwdFinded != IntPtr.Zero)
                 {
                     //输出句柄
@@ -155,6 +158,20 @@ namespace LeonardoScriptIDE
         private void btn_Set_Click(object sender, EventArgs e)
         {
             WindowsOP.SetWindowPos(Marshal.StringToHGlobalAnsi(txt_GetHwnd.Text), -1, 0, 0, 0, 0, 1 | 2);
+        }
+
+        private void btn_bind_Click(object sender, EventArgs e)
+        {
+            int dm_ret = dm.BindWindowEx((int)hwdTemp, "gdi2", "windows", "windows", "", 4);
+        }
+        private void func1()
+        {
+            dm.KeyPress(67);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            func1();
         }
     }
 }
